@@ -17,16 +17,14 @@ app.get("/api", (req, res) => {
   const currentDay = dayOfWeek[new Date().getDay()];
 
   const now = new Date();
-  const utcTime = new Date(
-    now.getTime() + (now.getTimezoneOffset() + 120) * 6000
-  ).toISOString();
+  const utcTime = now.toISOString().replace(/\.\d{3}Z$/, 'Z');
 
   const jsonResponse = {
     slack_name: slackName,
     current_day: currentDay,
     utc_time: utcTime,
     track: track,
-    github_file_url: "https://github.com/elijaharhinful/hng-backend-project1/blob/main/index.js",
+    github_file_url: "url",
     github_repo_url: "https://github.com/elijaharhinful/hng-backend-project1",
     status_code: 200,
   };
