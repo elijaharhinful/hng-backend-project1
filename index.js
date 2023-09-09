@@ -20,7 +20,7 @@ app.get("/api", (req, res) => {
   // const utcTime = new Date(
   //   now.getTime() + (now.getTimezoneOffset() + 120) * 6000
   // ).toISOString();
-  const utcTime = new Date().toDateString();
+  const utcTime = new Date().toISOString();
 
   const jsonResponse = {
     slack_name: slackName,
